@@ -11,6 +11,7 @@ with open("all_output.txt") as file:
       all_text = line.split()
       value_str = all_text[0].replace(",", "")
       consum_total += float(value_str)
+
     elif "seconds time elapsed" in line:
       all_text = line.split()
       value_str = all_text[0].replace(",", "")

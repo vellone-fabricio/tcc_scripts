@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import csv
+import sys
+
+PROJECT_NAME = sys.argv[1]
 
 x_yarn = []
 y_yarn = []
@@ -18,7 +21,7 @@ with open("filtered.csv", "r") as csv_file:
   plots = csv.reader(csv_file, delimiter=",")
 
   for row in plots:
-    if "attemp" in row:
+    if "attempt" in row:
       continue
 
     match row[1]:
@@ -50,7 +53,7 @@ for step in step_name:
 
 plt.xlabel('Attempt')
 plt.ylabel('Consumption (J)')
-plt.title("Consumption per attemp")
+plt.title(f"Consumption per attempt - {PROJECT_NAME}")
 plt.legend()
 
 plt.show()
